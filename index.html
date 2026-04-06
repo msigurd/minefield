@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Minefield</title>
+    <script type='text/javascript' src='script.js'></script>
+    <link rel='stylesheet' href='style.css'>
+    <meta name='description' content='A classic game about clearing mines.'>
+  </head>
+  <body>
+    <main>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id='status-bar'>
+        <p id='timer'>
+          <img class='icon icon--clock' src='assets/icons/clock.svg'>
+          <span id='timer-value'>00:00</span>
+        </p>
+        <p id='remaining-mines'>
+          <img class='icon icon--mine' src='assets/icons/mine.svg'>
+          <span id='remaining-mines-value'>10</span>
+        </p>
+      </div>
+      <div id='minefield'></div>
+      <div id='btn-area'>
+        <button id='reset-btn' type='button' class='btn'>
+          <img class='icon icon--reset' src='assets/icons/reset.svg'>
+          Reset
+        </button>
+        <button id='new-game-btn' type='button' class='btn' hidden>
+          <img class='icon icon--reload' src='assets/icons/reload.svg'>
+          New game
+        </button>
+      </div>
+    </main>
+    <footer>
+      <a href='https://github.com/msigurd/minefield' target='_blank' rel='noopener noreferrer'>
+        Source code
+      </a>
+    </footer>
+    <!-- TEMPLATES -->
+    <template id='square-template'>
+      <button type='button' class='square'>
+        <div class='square__mine'>
+          <img class='icon icon--mine' src='assets/icons/mine.svg'>
+          <img class='icon icon--cross' src='assets/icons/cross.svg'>
+        </div>
+        <div class='square__number'></div>
+        <div class='square__cover'></div>
+        <div class='square__flag'>
+          <img class='icon icon--flag' src='assets/icons/flag.svg'>
+        </div>
+      </button>
+    </template>
+  </body>
+</html>

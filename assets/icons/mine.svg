@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="180" height="180" version="1.1" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+ <g fill="#000" stroke="#000">
+  <rect transform="rotate(135)" x="40" y="-132.28" width="50" height="10" rx="15"/>
+  <rect transform="rotate(135)" x="-90" y="-132.28" width="50" height="10" rx="15"/>
+  <rect transform="rotate(225)" x="-217.28" y="-5" width="50" height="10" rx="15"/>
+  <rect transform="rotate(225)" x="-87.279" y="-5" width="50" height="10" rx="15"/>
+  <rect transform="rotate(-90)" x="-180" y="85" width="50" height="10" rx="15"/>
+  <rect transform="rotate(-90)" x="-50" y="85" width="50" height="10" rx="15"/>
+  <rect x="130" y="85" width="50" height="10" rx="15"/>
+  <rect x="-1.1499e-8" y="85" width="50" height="10" rx="15"/>
+  <circle transform="rotate(135)" cx="4.763e-9" cy="-127.28" r="70"/>
+ </g>
+</svg>
