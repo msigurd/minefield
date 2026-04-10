@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const NUM_OF_MINES = 10;
   const MOUSE_RIGHT_CLICK_VALUE = 2;
   const MAX_TIMER = 5999;
+  const LONG_TOUCH_DURATION = 500;
   const SQUARE_CLASS = 'square';
   const MINE_CLASS = 'square--mine';
   const FLAGGED_CLASS = 'square--flagged';
@@ -111,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         squareClone.querySelector('button').setAttribute(X_COORD_ATTR, x);
         squareClone.querySelector('button').setAttribute(Y_COORD_ATTR, y);
         squareClone.querySelector('button').addEventListener('mousedown', handleSquareClick);
+        onLongTouch(squareClone.querySelector('button'), handleSquareRightClick, LONG_TOUCH_DURATION);
         squareClone.querySelector('button').addEventListener('contextmenu', event => event.preventDefault());
 
         fragment.append(squareClone);
@@ -330,4 +332,19 @@ function shuffledArray(array) {
   }
 
   return shuffledArray;
+}
+
+// Based on https://stackoverflow.com/a/60207895
+function onLongTouch(element, callback, touchDuration) {
+  let timer;
+
+  element.addEventListener('touchstart', event => {
+    timer = setTimeout(() => {
+      timer = null;
+      callback(event);
+    }, touchDuration);
+  });
+
+  element.addEventListener('touchend', () => clearTimeout(timer));
+  element.addEventListener('touchmove', () => clearTimeout(timer));
 }
