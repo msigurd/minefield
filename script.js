@@ -111,9 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         squareClone.querySelector('button').setAttribute(X_COORD_ATTR, x);
         squareClone.querySelector('button').setAttribute(Y_COORD_ATTR, y);
-        squareClone.querySelector('button').addEventListener('mousedown', handleSquareClick);
-        onLongTouch(squareClone.querySelector('button'), handleSquareRightClick, LONG_TOUCH_DURATION);
-        squareClone.querySelector('button').addEventListener('contextmenu', event => event.preventDefault());
 
         fragment.append(squareClone);
       }
@@ -295,6 +292,15 @@ document.addEventListener('DOMContentLoaded', () => {
     isFlagged(target) ? unflag(target): flag(target);
   }
 
+  MINEFIELD_EL.addEventListener('mousedown', event => {
+    if (event.target.matches('.' + SQUARE_CLASS)) handleSquareClick(event);
+  });
+  MINEFIELD_EL.addEventListener('contextmenu', event => {
+    if (event.target.matches('.' + SQUARE_CLASS)) event.preventDefault();
+  });
+  onLongTouch(MINEFIELD_EL, event => {
+    if (event.target.matches('.' + SQUARE_CLASS)) handleSquareRightClick(event);
+  }, LONG_TOUCH_DURATION);
   RESET_BTN.addEventListener('click', reset);
   NEW_GAME_BTN.addEventListener('click', reset);
 });
